@@ -1,0 +1,23 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#003366;--blue:#075a9c;--light:#eef4f8;--text:#263238}
+body{font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;background:#f4f6f8;color:var(--text);line-height:1.65}
+.container{width:92%;max-width:1100px;margin:auto;padding:18px}
+.site-header{background:var(--navy);color:#fff;padding:22px 0 16px;margin-bottom:22px}
+.site-header h1{text-align:center;font-size:clamp(1.45rem,3vw,2rem);margin-bottom:3px}
+.course-code{text-align:center;font-size:.92rem;opacity:.9;margin-bottom:14px}
+.nav-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 20px;list-style:none}
+.nav-links a{color:#fff;text-decoration:none;font-weight:600}
+.nav-links a:hover{text-decoration:underline}
+section,.card{background:#fff;margin-bottom:20px;padding:22px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+h2{color:var(--navy);margin-bottom:12px;font-size:1.45rem}h3{color:var(--blue);margin:16px 0 8px}
+p{margin:8px 0}ul,ol{padding-left:24px;margin:8px 0}li{margin:5px 0}a{color:#075a9c}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.96rem}
+th,td{border:1px solid #d7e0e7;padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#eaf1f7;color:#173b5b}tr:nth-child(even){background:#fafcfd}
+.badge{display:inline-block;background:#e4eff8;color:#064477;border-radius:20px;padding:3px 10px;font-size:.85rem;font-weight:600;margin:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.info{background:var(--light);border-left:4px solid var(--blue);padding:13px 16px;margin:12px 0}
+.placeholder{color:#667781;font-style:italic;background:#f7f9fb;border:1px dashed #aab8c2;padding:12px;border-radius:5px}
+.site-footer{background:var(--navy);color:#fff;text-align:center;padding:15px;margin-top:35px}
+.site-footer p{margin:0}
+@media(max-width:650px){.container{width:96%;padding:12px}.nav-links{gap:8px 13px}.nav-links a{font-size:.9rem}section{padding:16px;overflow-x:auto}table{font-size:.88rem}}
