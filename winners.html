@@ -6,6 +6,18 @@
   <meta name="description" content="Course resources for PBCST404 Computer Organization and Architecture.">
   <title>Project Ideas | PBCST404</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .project { border: 1px solid #d0d7de; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .project h4 { margin-top: 0; }
+    .project .meta { font-size: 0.95rem; margin: 0.25rem 0 0.75rem; }
+    .badge { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.8rem; background: #eef2f7; border: 1px solid #cfd8e3; }
+    .table-wrap { overflow-x: auto; }
+    .table-wrap table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    .table-wrap th, .table-wrap td { border: 1px solid #d0d7de; padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; }
+    .table-wrap th { background: #f3f5f8; }
+    pre.code { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.75rem 1rem; overflow-x: auto; }
+    .toc li { margin: 0.2rem 0; }
+  </style>
 </head>
 <body>
 
@@ -29,7 +41,559 @@
 </header>
 
 <main class="container">
-<section><h2>Project Ideas and Student Work</h2><p>This page is reserved for project topics, demonstrations and selected student project work related to Computer Organization and Architecture.</p><h3>Suggested Areas</h3><ul><li>Cache mapping and replacement-policy comparison.</li><li>Cache miss-rate analysis using different access patterns.</li><li>Pipeline hazard identification and mitigation.</li><li>Performance comparison of single-cycle and pipelined processor designs.</li><li>Virtual-memory address translation and TLB behaviour.</li><li>Simulation of programmed I/O, interrupt-driven I/O or DMA.</li></ul><div class="placeholder">Project announcements, student presentations and project highlights will be added here.</div></section>
+
+<section id="overview">
+<h2>Project Ideas and Student Work</h2>
+<p>The project ideas below are aligned with the four modules of the KTU <strong>Computer Organization and Architecture (PBCST404)</strong> syllabus. They are suitable for B.Tech students and can be implemented using simulation tools, programming, or hardware description languages. Each project lists its objective, what to implement, the expected outcome and useful resources. Projects may be chosen individually or in small groups, as the course requires.</p>
+
+<h3>Suggested Areas</h3>
+<ul>
+  <li>Cache mapping and replacement-policy comparison.</li>
+  <li>Cache miss-rate analysis using different access patterns.</li>
+  <li>Pipeline hazard identification and mitigation.</li>
+  <li>Performance comparison of single-cycle and pipelined processor designs.</li>
+  <li>Virtual-memory address translation and TLB behaviour.</li>
+  <li>Simulation of programmed I/O, interrupt-driven I/O or DMA.</li>
+</ul>
+
+<h3>Contents</h3>
+<ul class="toc">
+  <li><a href="#beginner">A. Beginner-level projects (1&ndash;3)</a></li>
+  <li><a href="#intermediate">B. Intermediate-level projects (4&ndash;8)</a></li>
+  <li><a href="#advanced">C. Advanced-level projects (9&ndash;12)</a></li>
+  <li><a href="#first-principles">D. Build a computer from first principles (13)</a></li>
+  <li><a href="#tools">Recommended tools</a></li>
+  <li><a href="#modules">Project selection by KTU module</a></li>
+  <li><a href="#shortlist">Recommended shortlist</a></li>
+  <li><a href="#submission">Submission requirements</a></li>
+</ul>
+</section>
+
+<!-- ===================== A. BEGINNER ===================== -->
+<section id="beginner">
+<h2>A. Beginner-level projects</h2>
+<p>These projects suit students who are new to processor architecture simulation. Most can be completed using Python, C, or RISC-V assembly.</p>
+
+<article class="project" id="p1">
+<h4>1. RISC-V Assembly Programming Toolkit</h4>
+<p class="meta"><span class="badge">Beginner</span> &nbsp; <strong>Syllabus coverage:</strong> Module 1 &ndash; RISC architecture, assembly language, instructions, addressing modes and programming concepts.</p>
+<p><strong>Objective:</strong> Develop a collection of RISC-V assembly programs to demonstrate how high-level programming tasks are executed at the processor level.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Programs for arithmetic and logical operations.</li>
+  <li>Finding the largest and smallest elements in an array.</li>
+  <li>Sorting an array using bubble sort or selection sort.</li>
+  <li>Searching for an element using linear and binary search.</li>
+  <li>Programs using loops, conditional branches and functions.</li>
+  <li>Programs demonstrating stack operations and function calls.</li>
+</ul>
+<p><strong>Suggested extension:</strong> For selected C programs, compare the C source code with the generated RISC-V assembly. Identify how variables, loops, conditions and function calls are translated into instructions.</p>
+<p><strong>Expected outcome:</strong> A collection of tested RISC-V programs, with explanations of the instructions, registers, memory locations and addressing modes used.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://riscv-programming.org/index.html" target="_blank" rel="noopener">RISC-V Assembly Programming &ndash; Learning Resources</a></li>
+  <li><a href="https://riscv-programming.org/simulator.html" target="_blank" rel="noopener">RISC-V Assembly Learn Environment (ALE)</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+</ul>
+</article>
+
+<article class="project" id="p2">
+<h4>2. Interactive Memory Organization and Endianness Visualizer</h4>
+<p class="meta"><span class="badge">Beginner</span> &nbsp; <strong>Syllabus coverage:</strong> Module 1 &ndash; Memory map, memory organization and endianness.</p>
+<p><strong>Objective:</strong> Develop an interactive application that demonstrates how data is stored in computer memory and how different byte-ordering schemes represent the same data.</p>
+<p><strong>What students should implement:</strong></p>
+<ol>
+  <li>Allow users to enter a decimal or hexadecimal number.</li>
+  <li>Convert the number into binary and hexadecimal representations.</li>
+  <li>Display how the bytes are stored in consecutive memory locations.</li>
+  <li>Demonstrate both little-endian and big-endian representations.</li>
+  <li>Allow users to select different data sizes, such as 8-bit, 16-bit, 32-bit and 64-bit.</li>
+  <li>Demonstrate how memory addresses change when data is accessed.</li>
+</ol>
+<p><strong>Example:</strong> For the 32-bit hexadecimal value <code>0x12345678</code>:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Memory address</th><th>Little-endian</th><th>Big-endian</th></tr></thead>
+  <tbody>
+    <tr><td>1000</td><td>78</td><td>12</td></tr>
+    <tr><td>1001</td><td>56</td><td>34</td></tr>
+    <tr><td>1002</td><td>34</td><td>56</td></tr>
+    <tr><td>1003</td><td>12</td><td>78</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>Expected outcome:</strong> A web-based or desktop visualizer that helps users understand byte ordering, memory addressing and data representation.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://riscv.org/technical/specifications/" target="_blank" rel="noopener">RISC-V ISA Specifications</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+</ul>
+</article>
+
+<article class="project" id="p3">
+<h4>3. RISC-V Instruction Encoder and Decoder</h4>
+<p class="meta"><span class="badge">Beginner to Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 1 &ndash; Machine language, instruction formats and instruction execution.</p>
+<p><strong>Objective:</strong> Develop a tool that converts RISC-V assembly instructions into their corresponding machine-code representations and vice versa.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Accept assembly instructions such as <code>ADD</code>, <code>SUB</code>, <code>AND</code>, <code>OR</code>, <code>LW</code>, <code>SW</code> and <code>BEQ</code>.</li>
+  <li>Identify the instruction type: R-type, I-type, S-type, B-type, U-type or J-type.</li>
+  <li>Extract opcode, destination register, source registers, function codes and immediate values.</li>
+  <li>Generate the corresponding 32-bit machine instruction.</li>
+  <li>Display the binary and hexadecimal representations.</li>
+  <li>Decode a given machine instruction into its assembly representation.</li>
+</ul>
+<p><strong>Suggested extension:</strong> Show the individual bit positions of each instruction field and visually explain how an instruction is encoded.</p>
+<p><strong>Expected outcome:</strong> A working RISC-V assembler/decoder demonstration tool with test cases for different instruction formats.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://docs.riscv.org/reference/isa/" target="_blank" rel="noopener">The RISC-V Instruction Set Manual</a></li>
+  <li><a href="https://riscv-programming.org/index.html" target="_blank" rel="noopener">RISC-V Assembly Programming</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Source Code and Documentation</a></li>
+</ul>
+</article>
+</section>
+
+<!-- ===================== B. INTERMEDIATE ===================== -->
+<section id="intermediate">
+<h2>B. Intermediate-level projects</h2>
+<p>These projects involve processor datapaths, pipelining, cache organization and performance evaluation. They are particularly relevant to Modules 2 and 3.</p>
+
+<article class="project" id="p4">
+<h4>4. Design and Simulation of a Single-Cycle RISC-V Processor</h4>
+<p class="meta"><span class="badge">Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 2 &ndash; Single-cycle processor, datapath and control unit.</p>
+<p><strong>Objective:</strong> Design and simulate a simplified single-cycle RISC-V processor that can execute a selected set of instructions.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Program Counter (PC).</li>
+  <li>Instruction memory.</li>
+  <li>Register file.</li>
+  <li>Arithmetic Logic Unit (ALU).</li>
+  <li>Main control unit.</li>
+  <li>Immediate generation unit.</li>
+  <li>Data memory.</li>
+  <li>Multiplexers and supporting datapath connections.</li>
+</ul>
+<p><strong>Suggested instruction set:</strong></p>
+<ul>
+  <li>Arithmetic: <code>ADD</code>, <code>SUB</code>, <code>ADDI</code></li>
+  <li>Logical: <code>AND</code>, <code>OR</code></li>
+  <li>Memory: <code>LW</code>, <code>SW</code></li>
+  <li>Branch: <code>BEQ</code></li>
+</ul>
+<p><strong>Implementation approach:</strong></p>
+<ol>
+  <li>Design the processor datapath.</li>
+  <li>Develop the control signals for each instruction.</li>
+  <li>Integrate the datapath and control unit.</li>
+  <li>Execute sample assembly programs.</li>
+  <li>Observe register and memory changes.</li>
+  <li>Verify the correctness of instruction execution.</li>
+</ol>
+<p>Students can use Verilog or VHDL for hardware implementation, or a processor simulator for a software-based implementation.</p>
+<p><strong>Expected outcome:</strong> A working single-cycle processor model, supported by a datapath diagram, simulation waveforms and test results.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://sonic-rv.ics.jku.at/" target="_blank" rel="noopener">SonicRV &ndash; RISC-V Processor Simulator</a></li>
+  <li><a href="https://cvut.github.io/qtrvsim/manual/" target="_blank" rel="noopener">QtRvSim User Manual</a></li>
+  <li><a href="https://www.nand2tetris.org/project05" target="_blank" rel="noopener">Nand2Tetris &ndash; Computer Architecture Project</a></li>
+</ul>
+</article>
+
+<article class="project" id="p5">
+<h4>5. Five-Stage RISC-V Pipeline Simulator with Hazard Detection</h4>
+<p class="meta"><span class="badge">Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 2 &ndash; Pipelined processor, pipeline hazards and hazard resolution.</p>
+<p><strong>Objective:</strong> Develop a simulator that demonstrates the execution of instructions through a five-stage processor pipeline.</p>
+<p><strong>The five stages to be modelled:</strong></p>
+<ol>
+  <li><strong>IF &ndash; Instruction Fetch:</strong> Fetch the instruction from instruction memory.</li>
+  <li><strong>ID &ndash; Instruction Decode:</strong> Decode the instruction and read registers.</li>
+  <li><strong>EX &ndash; Execute:</strong> Perform the ALU operation or calculate an address.</li>
+  <li><strong>MEM &ndash; Memory Access:</strong> Read from or write to data memory.</li>
+  <li><strong>WB &ndash; Write Back:</strong> Store the result in the destination register.</li>
+</ol>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Display the five pipeline stages.</li>
+  <li>Show multiple instructions executing simultaneously.</li>
+  <li>Represent pipeline progress cycle by cycle.</li>
+  <li>Identify data hazards and control hazards.</li>
+  <li>Demonstrate forwarding and pipeline stalls.</li>
+  <li>Implement a basic hazard detection unit.</li>
+  <li>Compare execution with and without hazard-handling techniques.</li>
+</ul>
+<p><strong>Suggested experiment:</strong> Consider the following instructions:</p>
+<pre class="code"><code>ADD x5, x1, x2
+SUB x6, x5, x3
+AND x7, x6, x4
+OR  x8, x7, x2</code></pre>
+<p>Students should identify the dependencies between instructions and demonstrate how forwarding can reduce stalls.</p>
+<p><strong>Performance analysis:</strong> Compare total clock cycles, number of stalls, number of completed instructions, CPI (Cycles Per Instruction) and execution time under the assumed clock period.</p>
+<p><strong>Expected outcome:</strong> An interactive pipeline visualization tool that demonstrates instruction execution, hazards, forwarding and performance improvement.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://sonic-rv.ics.jku.at/" target="_blank" rel="noopener">SonicRV &ndash; Pipeline Processor Visualization</a></li>
+  <li><a href="https://cvut.github.io/qtrvsim/manual/" target="_blank" rel="noopener">QtRvSim &ndash; Processor Pipeline Simulation</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes &ndash; RISC-V Processor Simulator</a></li>
+</ul>
+</article>
+
+<article class="project" id="p6">
+<h4>6. Cache Memory Simulator: Mapping Techniques and Replacement Policies</h4>
+<p class="meta"><span class="badge">Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 3 &ndash; Cache memory, mapping techniques, replacement policies and cache performance.</p>
+<p><strong>Objective:</strong> Develop a cache simulator to study how different cache organizations affect memory-access performance.</p>
+<p><strong>What students should implement:</strong></p>
+<p><em>Part 1: Cache mapping techniques</em></p>
+<ul>
+  <li>Direct mapping.</li>
+  <li>Fully associative mapping.</li>
+  <li>Set-associative mapping.</li>
+</ul>
+<p><em>Part 2: Replacement policies</em></p>
+<ul>
+  <li>Least Recently Used (LRU).</li>
+  <li>First-In First-Out (FIFO).</li>
+  <li>Random replacement.</li>
+</ul>
+<p><em>Part 3: Cache parameters.</em> Allow users to configure cache size, block size, number of cache lines, associativity and memory access sequence.</p>
+<p><em>Part 4: Performance evaluation.</em> For a given memory access sequence, calculate:</p>
+<ul>
+  <li>Cache hits and cache misses.</li>
+  <li>Hit ratio and miss ratio.</li>
+  <li>Number of memory accesses.</li>
+  <li>Average Memory Access Time (AMAT), using specified hit time and miss penalty assumptions.</li>
+</ul>
+<p><strong>Suggested experiment:</strong> Run the same memory access sequence using direct-mapped, fully associative and set-associative caches. Compare the hit and miss rates.</p>
+<p><strong>Expected outcome:</strong> A graphical cache simulator that enables users to understand cache mapping, replacement policies and the effect of cache configuration on performance.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes &ndash; Cache Simulation Features</a></li>
+  <li><a href="https://www.gem5.org/documentation/learning_gem5/part1/cache_config/" target="_blank" rel="noopener">gem5 &ndash; Cache Configuration Tutorial</a></li>
+  <li><a href="https://www.gem5.org/documentation/general_docs/memory_system/" target="_blank" rel="noopener">gem5 &ndash; Memory System Documentation</a></li>
+  <li><a href="https://online-journals.org/index.php/i-jep/article/view/2784" target="_blank" rel="noopener">EDUCache &ndash; Educational Cache Simulator Research</a></li>
+</ul>
+</article>
+
+<article class="project" id="p7">
+<h4>7. Comparison of Cache Replacement Algorithms</h4>
+<p class="meta"><span class="badge">Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 3 &ndash; Cache replacement policies and cache performance.</p>
+<p><strong>Objective:</strong> Investigate the performance of different cache replacement algorithms using simulated memory-access patterns.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>FIFO replacement.</li>
+  <li>LRU replacement.</li>
+  <li>Random replacement.</li>
+  <li>Optional: Least Frequently Used (LFU).</li>
+</ul>
+<p><strong>Suggested experiments:</strong></p>
+<ol>
+  <li>Generate sequential memory accesses.</li>
+  <li>Generate random memory accesses.</li>
+  <li>Generate repeated accesses to a small set of addresses.</li>
+  <li>Generate accesses with locality of reference.</li>
+  <li>Run each sequence with different cache sizes.</li>
+  <li>Compare the replacement algorithms.</li>
+</ol>
+<p><strong>Performance metrics:</strong></p>
+<ul>
+  <li>Hit ratio and miss ratio.</li>
+  <li>Number of evictions.</li>
+  <li>Number of compulsory, capacity and conflict misses, where the simulator supports their classification.</li>
+</ul>
+<p><strong>Suggested extension:</strong> Allow users to upload a memory-access trace file and compare the performance of different replacement policies.</p>
+<p><strong>Expected outcome:</strong> A comparative study supported by graphs and experimental results explaining which replacement policy performs better under different workloads.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://www.gem5.org/documentation/" target="_blank" rel="noopener">gem5 Documentation</a></li>
+  <li><a href="https://www.gem5.org/documentation/learning_gem5/part1/cache_config/" target="_blank" rel="noopener">gem5 Cache Configuration Tutorial</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+</ul>
+</article>
+
+<article class="project" id="p8">
+<h4>8. Virtual Memory and TLB Performance Simulator</h4>
+<p class="meta"><span class="badge">Intermediate</span> &nbsp; <strong>Syllabus coverage:</strong> Module 3 &ndash; Virtual memory, address translation, page tables, TLB and memory protection.</p>
+<p><strong>Objective:</strong> Develop an interactive application to demonstrate virtual-to-physical address translation and the role of the Translation Lookaside Buffer (TLB).</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Accept a virtual address.</li>
+  <li>Divide the address into page number and page offset.</li>
+  <li>Implement a page table.</li>
+  <li>Translate virtual addresses into physical addresses.</li>
+  <li>Implement a TLB to store recently used translations.</li>
+  <li>Identify TLB hits and misses.</li>
+  <li>Demonstrate page faults.</li>
+  <li>Show how page-table entries are updated.</li>
+</ul>
+<p><strong>Suggested experiment:</strong> Compare address translation (1) without a TLB, (2) with a TLB, (3) with different TLB sizes, and (4) with different memory-access patterns.</p>
+<p><strong>Performance analysis:</strong> TLB hit ratio, TLB miss ratio, number of page-table accesses, and Effective Memory Access Time under specified latency assumptions.</p>
+<p><strong>Expected outcome:</strong> A visual virtual-memory simulator that explains address translation and demonstrates how TLBs improve memory-access performance.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://www.gem5.org/documentation/" target="_blank" rel="noopener">gem5 Documentation</a></li>
+  <li><a href="https://www.gem5.org/documentation/general_docs/memory_system/" target="_blank" rel="noopener">gem5 Memory System</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+</ul>
+</article>
+</section>
+
+<!-- ===================== C. ADVANCED ===================== -->
+<section id="advanced">
+<h2>C. Advanced-level projects</h2>
+<p>These projects combine processor architecture, hardware design, simulation and performance analysis. They suit students who are comfortable with programming and computer architecture fundamentals.</p>
+
+<article class="project" id="p9">
+<h4>9. Design of a Multilevel Cache System and Performance Analysis</h4>
+<p class="meta"><span class="badge">Advanced</span> &nbsp; <strong>Syllabus coverage:</strong> Module 3 &ndash; Multilevel cache organization and cache performance.</p>
+<p><strong>Objective:</strong> Design a simulation model of a memory hierarchy consisting of L1, L2 and optionally L3 caches.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Separate L1 instruction and data caches.</li>
+  <li>Unified L2 cache.</li>
+  <li>Optional L3 cache.</li>
+  <li>Main memory.</li>
+  <li>Configurable cache sizes and associativity.</li>
+  <li>Cache hit and miss handling.</li>
+  <li>Data transfer between cache levels.</li>
+</ul>
+<p><strong>Suggested experiments:</strong></p>
+<ul>
+  <li>Compare a single-level cache with a two-level cache.</li>
+  <li>Study the impact of L1 cache size.</li>
+  <li>Study the impact of L2 cache size.</li>
+  <li>Compare inclusive and exclusive cache organizations, if implemented.</li>
+  <li>Analyse the effect of block size on cache performance.</li>
+</ul>
+<p><strong>Performance metrics:</strong> L1 hit and miss rates, L2 hit and miss rates, Average Memory Access Time, total memory-access penalty, and performance under different workloads.</p>
+<p><strong>Expected outcome:</strong> A multilevel cache simulator and a detailed performance analysis showing how cache hierarchy improves memory performance.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://www.gem5.org/documentation/learning_gem5/part1/cache_config/" target="_blank" rel="noopener">gem5 Cache Configuration Tutorial</a></li>
+  <li><a href="https://www.gem5.org/documentation/general_docs/memory_system/" target="_blank" rel="noopener">gem5 Memory System Documentation</a></li>
+  <li><a href="https://www.gem5.org/documentation/" target="_blank" rel="noopener">gem5 Official Documentation</a></li>
+</ul>
+</article>
+
+<article class="project" id="p10">
+<h4>10. Performance Analysis of RISC-V Processor Architectures Using gem5</h4>
+<p class="meta"><span class="badge">Advanced</span> &nbsp; <strong>Syllabus coverage:</strong> Module 2 &ndash; Processor performance; Module 3 &ndash; Memory systems.</p>
+<p><strong>Objective:</strong> Use the gem5 architecture simulator to investigate how processor and memory-system configurations influence application performance.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>Configure a basic processor model.</li>
+  <li>Select appropriate processor types supported by gem5.</li>
+  <li>Configure the cache hierarchy.</li>
+  <li>Select memory configurations.</li>
+  <li>Execute selected benchmark programs.</li>
+  <li>Collect simulation statistics.</li>
+  <li>Compare performance across different configurations.</li>
+</ul>
+<p><strong>Suggested experiments:</strong></p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Experiment</th><th>Configuration comparison</th></tr></thead>
+  <tbody>
+    <tr><td>Processor performance</td><td>In-order vs out-of-order models</td></tr>
+    <tr><td>Cache performance</td><td>Small vs large L1 cache</td></tr>
+    <tr><td>Cache hierarchy</td><td>L1 only vs L1 + L2</td></tr>
+    <tr><td>Memory performance</td><td>Different memory configurations</td></tr>
+    <tr><td>Workload analysis</td><td>Sorting vs matrix multiplication</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>Performance metrics:</strong> Instructions executed, simulation cycles and ticks, CPI (where the selected model and statistics permit its calculation), cache hit/miss statistics, and memory-access latency.</p>
+<p><strong>Expected outcome:</strong> A research-oriented comparative study of processor and memory-system configurations, supported by simulation results and graphs.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://www.gem5.org/documentation/" target="_blank" rel="noopener">gem5 Official Documentation</a></li>
+  <li><a href="https://www.gem5.org/documentation/learning_gem5/part1/cache_config/" target="_blank" rel="noopener">gem5 Cache Configuration Tutorial</a></li>
+  <li><a href="https://www.gem5.org/documentation/general_docs/memory_system/" target="_blank" rel="noopener">gem5 Memory System Documentation</a></li>
+</ul>
+<p><strong>Important:</strong> gem5 is more complex than Ripes or QtRvSim. Students should begin with the official introductory material and a simple configuration before attempting advanced processor comparisons. Some older sections of the gem5 learning documentation are explicitly marked as outdated.</p>
+</article>
+
+<article class="project" id="p11">
+<h4>11. Design and Simulation of a DMA-Based Data Transfer System</h4>
+<p class="meta"><span class="badge">Advanced</span> &nbsp; <strong>Syllabus coverage:</strong> Module 4 &ndash; I/O organization, programmed I/O, interrupt-driven I/O and Direct Memory Access (DMA).</p>
+<p><strong>Objective:</strong> Develop a simulation model demonstrating how data can be transferred between an I/O device and main memory using different I/O techniques.</p>
+<p><strong>What students should implement:</strong> Model three data-transfer mechanisms.</p>
+<p><em>A. Programmed I/O</em></p>
+<ul>
+  <li>CPU continuously checks the status of the I/O device.</li>
+  <li>CPU controls the data transfer.</li>
+  <li>Demonstrate the time spent by the CPU in polling.</li>
+</ul>
+<p><em>B. Interrupt-driven I/O</em></p>
+<ul>
+  <li>I/O device generates an interrupt when it is ready.</li>
+  <li>CPU responds to the interrupt.</li>
+  <li>Demonstrate how the CPU can perform other tasks while waiting for the device.</li>
+</ul>
+<p><em>C. Direct Memory Access (DMA)</em></p>
+<ul>
+  <li>CPU initializes the DMA controller.</li>
+  <li>DMA controller transfers data between the I/O device and memory.</li>
+  <li>CPU receives an interrupt after transfer completion.</li>
+</ul>
+<p><strong>Suggested experiments:</strong></p>
+<ul>
+  <li>Transfer 100 bytes, 1 KB and 10 KB of data.</li>
+  <li>Compare CPU involvement in all three techniques.</li>
+  <li>Compare the total transfer time using assumed device and bus parameters.</li>
+  <li>Study the effect of increasing data-transfer size.</li>
+</ul>
+<p><strong>Expected outcome:</strong> A simulation application that visually demonstrates the three I/O techniques and compares their efficiency.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://cpulator.01xz.net/" target="_blank" rel="noopener">CPUlator &ndash; Processor and I/O Simulation</a></li>
+  <li><a href="https://riscv-programming.org/simulator.html" target="_blank" rel="noopener">RISC-V Assembly Learn Environment</a></li>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+</ul>
+</article>
+
+<article class="project" id="p12">
+<h4>12. RISC-V-Based Computer System Design Using HDL</h4>
+<p class="meta"><span class="badge">Advanced</span> &nbsp; <strong>Syllabus coverage:</strong> Modules 1, 2 and 4 &ndash; RISC-V architecture, processor datapath, control unit and I/O organization.</p>
+<p><strong>Objective:</strong> Design a simplified RISC-V-based computer system by integrating a processor, memory and basic input/output peripherals.</p>
+<p><strong>What students should implement:</strong></p>
+<ul>
+  <li>A simplified RISC-V processor.</li>
+  <li>Register file and ALU.</li>
+  <li>Instruction and data memory.</li>
+  <li>Control unit.</li>
+  <li>Memory-mapped I/O interface.</li>
+  <li>GPIO module.</li>
+  <li>LED and switch interface.</li>
+  <li>Basic serial communication interface, if feasible.</li>
+</ul>
+<p><strong>Suggested demonstration:</strong></p>
+<ul>
+  <li>Read the status of input switches.</li>
+  <li>Perform arithmetic operations.</li>
+  <li>Display the result using LEDs.</li>
+  <li>Transfer data through a serial interface.</li>
+  <li>Demonstrate processor interaction with memory-mapped peripherals.</li>
+</ul>
+<p><strong>Implementation tools:</strong> Verilog or VHDL; an FPGA development board, if available; a RISC-V simulator for initial validation.</p>
+<p><strong>Expected outcome:</strong> A simplified computer system capable of executing selected RISC-V instructions and interacting with external peripherals.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes Simulator</a></li>
+  <li><a href="https://cvut.github.io/qtrvsim/manual/" target="_blank" rel="noopener">QtRvSim User Manual</a></li>
+  <li><a href="https://riscv.org/technical/specifications/" target="_blank" rel="noopener">RISC-V Specifications</a></li>
+</ul>
+</article>
+</section>
+
+<!-- ===================== D. FIRST PRINCIPLES ===================== -->
+<section id="first-principles">
+<h2>D. Additional project inspiration: Build a computer from first principles</h2>
+
+<article class="project" id="p13">
+<h4>13. From Logic Gates to a Working Computer &ndash; Nand2Tetris</h4>
+<p class="meta"><span class="badge">Advanced (can be divided into smaller projects)</span> &nbsp; <strong>Syllabus coverage:</strong> Mainly Module 1 and selected concepts from Module 2.</p>
+<p><strong>Objective:</strong> Build a simplified computer system step by step, starting from basic logic gates and progressing towards a functional processor.</p>
+<p><strong>What students can implement:</strong></p>
+<ol>
+  <li>Basic logic gates.</li>
+  <li>Half adder and full adder.</li>
+  <li>Arithmetic Logic Unit (ALU).</li>
+  <li>Registers and memory.</li>
+  <li>Program Counter.</li>
+  <li>CPU.</li>
+  <li>Instruction execution.</li>
+  <li>A simple assembler.</li>
+</ol>
+<p><strong>Expected outcome:</strong> A complete educational computer model demonstrating the relationship between digital logic, memory, machine instructions and processor architecture.</p>
+<p><strong>Useful links:</strong></p>
+<ul>
+  <li><a href="https://www.nand2tetris.org/" target="_blank" rel="noopener">Nand2Tetris Official Course</a></li>
+  <li><a href="https://www.nand2tetris.org/course" target="_blank" rel="noopener">Nand2Tetris Project Guidelines</a></li>
+  <li><a href="https://nand2tetris.github.io/web-ide/about/" target="_blank" rel="noopener">Nand2Tetris Online IDE</a></li>
+  <li><a href="https://www.nand2tetris.org/project05" target="_blank" rel="noopener">Project 5 &ndash; Computer Architecture</a></li>
+</ul>
+</article>
+</section>
+
+<!-- ===================== TOOLS ===================== -->
+<section id="tools">
+<h2>Recommended tools for student projects</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Tool</th><th>Main application</th><th>Suitable projects</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/mortbopet/ripes" target="_blank" rel="noopener">Ripes</a></td><td>RISC-V assembly, processor visualization, cache and I/O</td><td>1, 3, 5, 6, 12</td></tr>
+    <tr><td><a href="https://sonic-rv.ics.jku.at/" target="_blank" rel="noopener">SonicRV</a></td><td>Single-cycle, multicycle and pipelined RISC-V processors</td><td>4, 5</td></tr>
+    <tr><td><a href="https://cvut.github.io/qtrvsim/manual/" target="_blank" rel="noopener">QtRvSim</a></td><td>Datapath, pipeline, registers, cache and peripherals</td><td>4, 5, 12</td></tr>
+    <tr><td><a href="https://riscv-programming.org/simulator.html" target="_blank" rel="noopener">ALE Simulator</a></td><td>RISC-V assembly and peripheral simulation</td><td>1, 11, 12</td></tr>
+    <tr><td><a href="https://www.gem5.org/documentation/" target="_blank" rel="noopener">gem5</a></td><td>Processor, cache and memory-system simulation</td><td>9, 10</td></tr>
+    <tr><td><a href="https://www.nand2tetris.org/" target="_blank" rel="noopener">Nand2Tetris</a></td><td>Logic gates, ALU, memory and CPU construction</td><td>12, 13</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>Recommendation:</strong> For most undergraduate projects, start with Ripes, SonicRV or QtRvSim. They provide visual feedback and allow students to concentrate on architecture concepts without spending too much time setting up a complex simulation environment. Use gem5 for students undertaking more advanced performance-analysis projects.</p>
+</section>
+
+<!-- ===================== MODULE MAPPING ===================== -->
+<section id="modules">
+<h2>Project selection according to KTU modules</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>KTU module</th><th>Suggested projects</th></tr></thead>
+  <tbody>
+    <tr><td>Module 1 &ndash; Basic Computer Organization and RISC</td><td>1, 2, 3, 13</td></tr>
+    <tr><td>Module 2 &ndash; Microarchitecture and Pipelining</td><td>4, 5</td></tr>
+    <tr><td>Module 3 &ndash; Memory Systems</td><td>6, 7, 8, 9, 10</td></tr>
+    <tr><td>Module 4 &ndash; I/O Organization</td><td>11, 12</td></tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<!-- ===================== SHORTLIST ===================== -->
+<section id="shortlist">
+<h2>Recommended shortlist for PBCST404</h2>
+<p>A manageable list of eight projects that balances implementation effort, syllabus coverage and demonstrable outcomes:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>No.</th><th>Project</th><th>Main learning outcome</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>RISC-V Assembly Programming Toolkit</td><td>Understand assembly instructions and addressing modes</td></tr>
+    <tr><td>2</td><td>RISC-V Instruction Encoder and Decoder</td><td>Understand machine-language representation</td></tr>
+    <tr><td>3</td><td>Single-Cycle RISC-V Processor</td><td>Understand processor datapath and control</td></tr>
+    <tr><td>4</td><td>Five-Stage Pipeline Simulator</td><td>Understand pipelining and hazards</td></tr>
+    <tr><td>5</td><td>Cache Memory Simulator</td><td>Understand cache mapping and replacement</td></tr>
+    <tr><td>6</td><td>Virtual Memory and TLB Simulator</td><td>Understand address translation</td></tr>
+    <tr><td>7</td><td>Multilevel Cache Performance Analysis</td><td>Understand memory hierarchy and performance</td></tr>
+    <tr><td>8</td><td>DMA-Based Data Transfer Simulator</td><td>Understand I/O organization</td></tr>
+  </tbody>
+</table>
+</div>
+<p><small>Numbers in this shortlist are its own sequence and differ from the project numbers above.</small></p>
+</section>
+
+<!-- ===================== SUBMISSION ===================== -->
+<section id="submission">
+<h2>Project submission requirements</h2>
+<p>To ensure that projects demonstrate actual learning rather than merely presenting an existing simulator, students should submit:</p>
+<ol>
+  <li><strong>Problem statement:</strong> The architectural concept being investigated.</li>
+  <li><strong>Design:</strong> Block diagram, flowchart or system architecture.</li>
+  <li><strong>Implementation:</strong> Source code, HDL files or simulation configuration.</li>
+  <li><strong>Test cases:</strong> At least five meaningful test cases.</li>
+  <li><strong>Experimental analysis:</strong> Results obtained by varying relevant parameters.</li>
+  <li><strong>Comparison:</strong> Graphs or tables explaining the observed performance.</li>
+  <li><strong>Demonstration:</strong> A working application or simulation.</li>
+  <li><strong>Report:</strong> Explanation of the architecture concepts demonstrated and conclusions.</li>
+</ol>
+<p><strong>Important guideline:</strong> Students should not simply operate Ripes, gem5 or another existing simulator and submit screenshots. They should implement a meaningful component, develop a simulation model, automate experiments or perform a systematic performance analysis.</p>
+</section>
+
+<section id="announcements">
+<h2>Announcements and Student Work</h2>
+<div class="placeholder">Project announcements, student presentations and project highlights will be added here.</div>
+</section>
+
 </main>
 
 <footer class="site-footer">
